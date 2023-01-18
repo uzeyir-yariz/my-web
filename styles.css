@@ -11,6 +11,7 @@ link: https://colorhunt.co/palette/0820322c394b334756ff4c29*/
     --blue-dark: #0B2040;
     --vdark-gray: #082032;
     --lg: #7fff00;
+    --black: #181818;
 }
 
 *{
@@ -175,21 +176,21 @@ nav > ul > li > a:hover{
 }
 
 /*--------------------------------------------------(main bölümü)--------------------------------------------------*/
+body{
+  background: linear-gradient(var(--open-gray), var(--blue-dark), var(--black));
+}
 main{
   padding: 1rem;
-  background-color: var(--open-gray);
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: grad 100s infinite;
 }
 
-@keyframes grad{
-  0%{background-color: var(--open-gray);}
-  50%{background-color: var(--blue-dark);}
-  100%{background-color: var(--open-gray);}
+main > img{
+  width: 97%;
+  border-radius: 25px;
+  box-shadow: 1px 1px 25px black;
 }
-
 
 .box{
   box-shadow: 8px 6px 10px black;
@@ -213,7 +214,6 @@ main > img{
 
 /*projeler*/
 .pro{
-  margin-top: 40px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -228,11 +228,18 @@ main > img{
   text-align: center;
   max-width: 300px;
   min-width: 150px;
+  transition: 500ms;
+  height: 100px;
+  overflow: hidden;
+}
+
+.pro-box:hover{
+  height: 275px;
+  cursor: pointer;
 }
 
 .pro-box > h3{
   position: relative;  
-  right: 125px;
   transform: rotate(-25deg);
   color: var(--lg);
   animation: jumper 500ms infinite;
@@ -244,9 +251,9 @@ main > img{
 }
 
 @keyframes jumper{
-  0% {transform: scale(1)    rotate(-25deg);}
-  50% {transform: scale(1.2) rotate(-25deg);}
-  100% {transform: scale(1)  rotate(-25deg);}
+  0% {transform: scale(1)     rotate(25deg);}
+  50% {transform: scale(1.2)  rotate(-25deg);}
+  100% {transform: scale(1)   rotate(25deg);}
 }
 
 .pro-box > ul{
@@ -256,7 +263,7 @@ main > img{
   flex-wrap: wrap;
 }
 
-.pro-box > a{
+#btn{
   text-decoration: none;
   color: var(--lg);
   transition: 500ms; 
@@ -264,7 +271,7 @@ main > img{
   padding: 5px;
   border-radius: 5px;
 }
-.pro-box > a:hover{
+#btn:hover{
   color: var(--orange);
   border-radius: 25px;
 }
@@ -284,6 +291,7 @@ main > img{
 .pro-box > h4{
   color: azure;
   font-size: x-large;
+  margin-top: 15px;
 }
 
 .pro-box > p{
@@ -308,9 +316,17 @@ main > img{
   text-align: center;
   max-width: 300px;
   min-width: 150px;
+  overflow: hidden;
+  height: 80px;
+  transition: 500ms;
 }
 
-.doc-box > a{
+.doc-box:hover{
+  cursor: pointer;
+  height: 300px;
+}
+
+#btn{
   text-decoration: none;
   color: var(--lg);
   transition: 500ms; 
@@ -318,7 +334,7 @@ main > img{
   padding: 5px;
   border-radius: 5px;
 }
-.doc-box > a:hover{
+#btn:hover{
   color: var(--orange);
   border-radius: 25px;
 }
@@ -374,6 +390,14 @@ main > img{
   text-align: center;
   max-width: 500px;
   min-width: 150px;
+  overflow: hidden;
+  height: 70px;
+  transition: 500ms;
+}
+
+.hak-box:hover{
+  cursor: pointer;
+  height: 200px;
 }
 
 .hak-box > h4{
@@ -388,7 +412,7 @@ main > img{
   color: azure;
 }
 
-.hak-box > a{
+#btn{
   text-decoration: none;
   color: var(--lg);
   transition: 500ms; 
@@ -396,7 +420,8 @@ main > img{
   padding: 5px;
   border-radius: 5px;
 }
-.hak-box > a:hover{
+
+#btn:hover{
   color: var(--orange);
   border-radius: 25px;
 }
